@@ -27,11 +27,23 @@ public class EnemyBehaviour : MonoBehaviour
 
 
    
-        void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
         {
                 Debug.Log("castle takes damage!!");
                 Destroy(gameObject);
 
+    }
+
+
+    public int health = 100;
+    private void OnMouseDown()
+    {
+        Debug.Log("You hit an enemy!");
+        health -= 50;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
         }
+    }
 
 }
